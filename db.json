@@ -1,19 +1,114 @@
 {
-  "posts": [
+  "productlist": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "createdAt": "2021-10-05T22:30:06.388Z",
+      "name": "java",
+      "avatar": "https://cdn.fakercloud.com/avatars/ntfblog_128.jpg",
+      "id": "1",
+      "price": "123"
+    },
+    {
+      "createdAt": "2021-10-05T22:30:06.388Z",
+      "name": "python",
+      "avatar": "https://cdn.fakercloud.com/avatars/ntfblog_128.jpg",
+      "id": "2",
+      "price": "23123"
+    },
+    {
+      "createdAt": "2021-10-05T22:30:06.388Z",
+      "name": "javascript",
+      "avatar": "https://cdn.fakercloud.com/avatars/ntfblog_128.jpg",
+      "id": "3",
+      "price": "123"
+    },
+    {
+      "createdAt": "2021-10-05T22:30:06.388Z",
+      "name": "PHP",
+      "avatar": "https://cdn.fakercloud.com/avatars/ntfblog_128.jpg",
+      "id": "5",
+      "price": "123"
+    },
+    {
+      "createdAt": "2021-10-05T22:30:06.388Z",
+      "name": "C++",
+      "avatar": "https://cdn.fakercloud.com/avatars/ntfblog_128.jpg",
+      "id": "6",
+      "price": "123"
+    },
+    {
+      "createdAt": "2021-10-08T03:04:55.524Z",
+      "name": "Python",
+      "avatar": "https://cdn.fakercloud.com/avatars/canapud_128.jpg",
+      "id": "7",
+      "price": "1234565"
+    },
+    {
+      "name": "Kurtis Weissnat IV",
+      "price": "123",
+      "id": "CsA5DjH"
     }
   ],
-  "comments": [
+  "register": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": "1",
+      "name": "Leanne Graham",
+      "username": "Bret",
+      "email": "Sincere@april.biz",
+      "password": "123456"
+    },
+    {
+      "id": "2",
+      "name": "Ervin Howell",
+      "username": "Antonette",
+      "email": "Shanna@melissa.tv",
+      "password": "123456"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "users": [
+    {
+      "email": "Nathan@yesenia.net",
+      "password": "$2a$10$wMhBQVGOzhfVkc2InrNOv.f.1rSfvwXucIWUswsX2bFG4ZsnfVpxO",
+      "id": "3",
+      "name": "Clementine Bauch",
+      "username": "Samantha"
+    },
+    {
+      "email": "Julianne.OConner@kory.org",
+      "password": "$2a$10$cUkN/X5OgjLe0rfVahgw/OPIAGVG4SJLM7DL6WKFUWTWnhqO79nce",
+      "id": "4",
+      "name": "Patricia Lebsack",
+      "username": "Karianne"
+    },
+    {
+      "email": "thinnqph12915@fpt.edu.vn",
+      "password": "$2a$10$rz7k6/ieiD86nxMfZRNLVeirJ5uyaiu7ERApA.X9aYOJHScwf7KEy",
+      "id": "L80biEl"
+    },
+    {
+      "email": "Sincere@april.biz",
+      "password": "$2a$10$Ru3Bg37BQ9hEJYSynC7qPOge/DtOclpd0Rp3rW1dhl0tlJyJntzTi",
+      "id": "1",
+      "name": "Leanne Graham",
+      "username": "Bret"
+    },
+    {
+      "email": "Shanna@melissa.tv",
+      "password": "$2a$10$ZrTZPvZdFrcCWi2gRUvMwez1ddSs7i1PWon/pxxq6hJW2oqWvAKjK",
+      "id": "2",
+      "name": "Ervin Howell",
+      "username": "Antonette"
+    },
+    {
+      "email": "Lucio_Hettinger@annie.ca",
+      "password": "$2a$10$2yYQw.hmd.OsiRYRAhfsbuq/aA5YVsLOLy2VtcUzZ0SnKk0IgUiHm",
+      "id": "5",
+      "name": "Chelsey Dietrich",
+      "username": "Kamren"
+    },
+    {
+      "email": "nguyenthin34hd@gmail.com",
+      "password": "$2a$10$/gfJSaLxRdZsJPShPMPbE.4cdgcqf2TJeEH1bu3dz3NRi5DmwjiUu",
+      "id": "AtVco6L"
+    }
+  ]
 }

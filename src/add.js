@@ -1,8 +1,7 @@
-import { propTypes } from "react-bootstrap/esm/Image";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router";
 import { add } from "./api/productapi";
-//hellooooo
+import "./css/addprd.css";
 export default function Add(props) {
   let history = useHistory();
   const {
@@ -20,24 +19,46 @@ export default function Add(props) {
     }
   };
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="mb-3">
-        <label className="form-label">Name</label>
-        <input
-          type="text"
-          className="form-control"
-          {...register("name", { required: true })}
-        />
-        {errors.name && <span>Trường name không được bỏ trống</span>}
-      </div>
-      <div className="mb-3">
-        <label className="form-label">Price</label>
-        <input type="number" className="form-control" {...register("price")} />
-        {errors.price && <span>Trường price không được bỏ trống</span>}
-      </div>
-      <button type="submit" className="btn btn-info">
-        Thêm sản phẩm
-      </button>
-    </form>
+    <div className="add_container">
+      <form onSubmit={handleSubmit(onSubmit)} className="form_add">
+        <div className="field" tabIndex={1}>
+          <label htmlFor="username" className="css_witdh">
+            <i className="far fa-user" />
+            Product's Name
+          </label>
+          <input
+            type="text"
+            placeholder="e.g. john doe"
+            required
+            {...register("name", { required: true })}
+          />
+        </div>
+        <div className="field" tabIndex={2}>
+          <label className="css_witdh">
+            <i className="far fa-envelope" />
+            Product's Price
+          </label>
+          <input
+            type="number"
+            placeholder="Price"
+            required
+            {...register("price", { required: true })}
+          />
+        </div>
+        <div className="field" tabIndex={3}>
+          <label className="css_witdh">
+            <i className="far fa-edit" />
+            Product's description
+          </label>
+          <textarea
+            placeholder="description"
+            required
+            defaultValue={""}
+            {...register("description", { required: true })}
+          />
+        </div>
+        <button className="css_btn">Add Product</button>
+      </form>
+    </div>
   );
 }

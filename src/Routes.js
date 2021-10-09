@@ -8,43 +8,16 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import Product from "./product";
 import Add from "./add";
-import { useParams } from "react-router";
+import Navb from "./nav";
 import Edit from "./edit";
 import Home from "./home";
 import Detail from "./detail";
 import Signup from "./page/signup";
-
+import Signin from "./page/Signin";
 export default function Routes(props) {
   return (
     <Router>
-      <nav className="navbar navbar-expand-lg navbar-light bg-warning">
-        <div className="container-fluid">
-          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div className="navbar-nav">
-              <div className="nav-link">
-                <NavLink to="/" activeClassName="active" exact>
-                  home
-                </NavLink>
-              </div>
-              <div className="nav-link">
-                <NavLink to="/product" activeClassName="active" exact>
-                  Product
-                </NavLink>
-              </div>
-              <div className="nav-link">
-                <NavLink to="/product/add" activeClassName="active">
-                  Add Product
-                </NavLink>
-              </div>
-              <div className="nav-link">
-                <NavLink to="/signup" activeClassName="active">
-                  Sign Up
-                </NavLink>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navb />
       <Switch>
         <Route path="/" exact>
           <Home />
@@ -63,6 +36,9 @@ export default function Routes(props) {
         </Route>
         <Route path="/signup">
           <Signup />
+        </Route>
+        <Route path="/signin">
+          <Signin />
         </Route>
       </Switch>
     </Router>
