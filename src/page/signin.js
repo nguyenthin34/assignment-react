@@ -3,7 +3,9 @@ import { signin } from "../api/authAPI";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./sigbup.css";
+import { useHistory } from "react-router";
 export default function Signin() {
+  let history = useHistory();
   const {
     register,
     handleSubmit,
@@ -19,6 +21,7 @@ export default function Signin() {
       localStorage.setItem("info", JSON.stringify(result.data));
       // Hiển thị thông báo thành công
       toast.success("Đăng nhập thành công");
+      history.push("/");
     } catch (error) {
       toast.error(error.response.data);
     }

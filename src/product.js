@@ -33,7 +33,7 @@ export default function Product(props) {
           >
             Xóa
           </button>
-          <div className="btn-group center">
+          <div className="btn-group">
             <Link
               role="button"
               className="btn_update"

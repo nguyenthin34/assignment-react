@@ -17,7 +17,7 @@ import Signin from "./page/Signin";
 export default function Routes(props) {
   return (
     <Router>
-      <Navb />
+      <Signin />
       <Switch>
         <Route path="/" exact>
           <Home />
