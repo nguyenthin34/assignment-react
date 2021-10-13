@@ -17,9 +17,11 @@ import Signin from "./page/Signin";
 export default function Routes(props) {
   return (
     <Router>
-      <Signin />
       <Switch>
         <Route path="/" exact>
+          <Signin />
+        </Route>
+        <Route path="/home" exact>
           <Home />
         </Route>
         <Route path="/product" exact>

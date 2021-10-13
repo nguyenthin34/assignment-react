@@ -1,18 +1,30 @@
-import { propTypes } from "react-bootstrap/esm/Image";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useForm } from "react-hook-form";
-import { useHistory } from "react-router";
 import "./sigbup.css";
-import Signup from "../api/authAPI";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { auth } from "../firebase";
+import { Link } from "react-router-dom";
 export default function Add(props) {
-  let history = useHistory();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
-    Signup(data);
+  const onSubmit = async (data) => {
+    try {
+      const result = await createUserWithEmailAndPassword(
+        auth,
+        data.email,
+        data.password
+      );
+      toast.success("Đăng Ký thành công");
+      const { user } = result;
+      console.log(user);
+    } catch (error) {
+      toast.error(error.message);
+    }
+    // Signup(data);
   };
   return (
     <div className="container">
@@ -24,7 +36,8 @@ export default function Add(props) {
           </h4>
         </div>
         <form onSubmit={handleSubmit(onSubmit)} className="form">
-          <input
+          <ToastContainer />
+          {/* <input
             type="text"
             className="form-field animation a3"
             placeholder="User Name"
@@ -35,7 +48,7 @@ export default function Add(props) {
             className="form-field animation a3"
             placeholder="Full name"
             {...register("name", { required: true })}
-          />
+          /> */}
           <input
             type="email"
             className="form-field animation a3"
@@ -49,6 +62,11 @@ export default function Add(props) {
             {...register("password", { required: true })}
           />
           <button className="animation a6">Sign Up</button>
+          <button>
+            <Link role="button" to={"/signin"}>
+              Back
+            </Link>
+          </button>
         </form>
       </div>
       <div className="right" />

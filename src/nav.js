@@ -21,7 +21,7 @@ export default function Navb() {
       <nav id="navbar" className="navbar">
         <ul>
           <li className="nav-link scrollto active">
-            <NavLink to="/" exact>
+            <NavLink to="/home" exact>
               Home
             </NavLink>
           </li>
@@ -33,7 +33,7 @@ export default function Navb() {
           <li className="nav-link scrollto">
             <NavLink to="/product/add">Add Product</NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink to="/signup" className="getstarted scrollto">
               Sign Up
             </NavLink>
@@ -42,7 +42,7 @@ export default function Navb() {
             <NavLink to="/signin" className="getstarted scrollto">
               Sign In
             </NavLink>
-          </li>
+          </li> */}
         </ul>
         <i className="bi bi-list mobile-nav-toggle" />
       </nav>

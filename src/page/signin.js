@@ -1,9 +1,11 @@
 import { useForm } from "react-hook-form";
-import { signin } from "../api/authAPI";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./sigbup.css";
 import { useHistory } from "react-router";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
+import { Link } from "react-router-dom";
 export default function Signin() {
   let history = useHistory();
   const {
@@ -14,16 +16,19 @@ export default function Signin() {
 
   const onSubmit = async (data) => {
     try {
-      // call api
-      const result = await signin(data);
-      console.log(result);
-      // trả về dữ liệu user và lưu vào localStorage
-      localStorage.setItem("info", JSON.stringify(result.data));
-      // Hiển thị thông báo thành công
+      // // call api
+      // const result = await signin(data);
+      // console.log(result);
+
+      // // Hiển thị thông báo thành công
+      await signInWithEmailAndPassword(auth, data.email, data.password);
+      // // trả về dữ liệu user và lưu vào localStorag e
+      // localStorage.setItem("info", JSON.stringify(result.data));
       toast.success("Đăng nhập thành công");
-      history.push("/");
+      console.log(auth.currentUser);
+      history.push("/home");
     } catch (error) {
-      toast.error(error.response.data);
+      toast.error(error.message);
     }
   };
   return (
@@ -41,15 +46,20 @@ export default function Signin() {
             type="email"
             className="form-field animation a3"
             placeholder="Email Address"
-            {...register("email", { required: true })}
+            {...register("email")}
           />
           <input
             type="password"
             className="form-field animation a4"
             placeholder="Password"
-            {...register("password", { required: true })}
+            {...register("password")}
           />
           <button className="animation a6">Sign In</button>
+          <button className="animation a6">
+            <Link role="button" to={"/Signup"} style={{ color: "white" }}>
+              Sign Up
+            </Link>
+          </button>
         </form>
       </div>
       <div className="right" />
