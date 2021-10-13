@@ -5,11 +5,7 @@ import "./css/addprd.css";
 import Navb from "./nav";
 export default function Add(props) {
   let history = useHistory();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
   const onSubmit = async (product) => {
     try {
       const { data } = await add(product);

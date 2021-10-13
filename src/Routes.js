@@ -1,14 +1,8 @@
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Product from "./product";
 import Add from "./add";
-import Navb from "./nav";
 import Edit from "./edit";
 import Home from "./home";
 import Detail from "./detail";

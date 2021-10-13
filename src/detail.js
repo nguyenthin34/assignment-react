@@ -1,9 +1,7 @@
-import { useHistory, useLocation, useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
 import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
 import Navb from "./nav";
 export default function Detail() {
-  let history = useHistory();
   const { id } = useParams();
   const [product, setProduct] = useState({});
   useEffect(() => {
