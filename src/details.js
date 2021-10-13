@@ -1,18 +1,30 @@
-import { useHistory, useLocation, useParams } from "react-router";
-import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
+import { remove } from "./api/productapi";
+import "./css/prdcss.css";
+import "./css/search.css";
 import Navb from "./nav";
-export default function Detail() {
-  let history = useHistory();
+import { useState, useEffect } from "react";
+import { useParams } from "react-router";
+import { get } from "./api/productapi";
+import { useForm } from "react-hook-form";
+export default function Product(props) {
+  const removeProduct = async (id) => {
+    try {
+      remove(id);
+      props.onDelete(id);
+    } catch (error) {}
+  };
   const { id } = useParams();
   const [product, setProduct] = useState({});
   useEffect(() => {
     fetch("https://6153c7069935230017557055.mockapi.io/product/" + id)
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         setProduct(data);
       });
-  }, []);
+  }, {});
   return (
     <div>
       <Navb />

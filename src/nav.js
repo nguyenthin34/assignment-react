@@ -37,12 +37,12 @@ export default function Navb() {
             <NavLink to="/signup" className="getstarted scrollto">
               Sign Up
             </NavLink>
-          </li>
+          </li> */}
           <li>
             <NavLink to="/signin" className="getstarted scrollto">
-              Sign In
+              Sign Out
             </NavLink>
-          </li> */}
+          </li>
         </ul>
         <i className="bi bi-list mobile-nav-toggle" />
       </nav>

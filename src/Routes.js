@@ -14,6 +14,7 @@ import Home from "./home";
 import Detail from "./detail";
 import Signup from "./page/signup";
 import Signin from "./page/Signin";
+import Details from "./details";
 export default function Routes(props) {
   return (
     <Router>
@@ -33,8 +34,11 @@ export default function Routes(props) {
         <Route path="/product/edit/:id">
           <Edit onUpdate={props.onUpdate} />
         </Route>
-        <Route path="/product/detail/:id">
+        <Route path="/product/detail/:id" exact>
           <Detail />
+        </Route>
+        <Route path="/product/details/:id">
+          <Details />
         </Route>
         <Route path="/signup">
           <Signup />
